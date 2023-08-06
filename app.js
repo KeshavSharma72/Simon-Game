@@ -1,4 +1,3 @@
-//Store keypress event to initiate the game
 let gameStarted = false;
 let level = 0;
 let colors = ["red", "blue", "aqua", "yellow"];
@@ -18,7 +17,30 @@ document.addEventListener('touchstart', function() {
         gameOverStatus = false;
         initiateGame();
     }
+
     });
+
+//Gives the intro glow up
+function initiateGame() {
+    gameInProgress = false;
+
+    let boxes = document.querySelectorAll('.box');
+    let index = 0;
+    let interval = setInterval(function() {
+        if (index < boxes.length-1) {
+            if (index == 2) {
+                index++;
+            }
+            glow(boxes[index]);
+            index++;
+        } else {
+            glow(boxes[2]);
+            clearInterval(interval);
+            gameToggle();
+        }
+    }, 50);
+
+}
    
 //Actual games start from here
 function gameToggle() {
@@ -32,15 +54,17 @@ function gameToggle() {
         headingElement.innerText = `Level ${level}`;
     }, 800);
 
-    setTimeout(randBtn, 1200);
+    setTimeout(randBtn, 500);
 }
 
+//Generates random button 
 function randBtn() {
     let randNum = Math.floor(Math.random()*3);
     gameSeq.push(colors[randNum]);
     gameContinue();
 }
 
+//Glows the new sequence
 function gameContinue() {
     userSeq = [];
     let index = 0;
@@ -52,11 +76,12 @@ function gameContinue() {
         } else {
             clearInterval(interval);
         }
-    }, 750);
+    }, 320);
     console.log("gameContinue function");   
     
 }
 
+//User sequence process starts from here
 let boxes = document.querySelectorAll(".box")
 for(box of boxes) {
     box.addEventListener('click', btnPress);
@@ -81,6 +106,7 @@ function checkSeq(idx) {
     }
 }
 
+//Level up fucntion
 function levelUp() {
     let body = document.querySelector('div');
     body.classList.add("levelUpFlash");
@@ -89,12 +115,13 @@ function levelUp() {
     }, 250);
     level++;
     headingElement.innerText = `Level ${level}`;
-    setTimeout(randBtn, 1200);
+    setTimeout(randBtn, 500);
     maxScore = Math.max(maxScore, level);
     let max = document.querySelector(".max-score");
     max.innerText = `Max Score: ${maxScore-1}`;
 }
 
+//Level up fucntion
 function gameOver() {
     gameOverStatus = true;
     gameStarted = false;
@@ -104,27 +131,6 @@ function gameOver() {
     level = 0;
 }
 
-//Gives the intro glow up
-function initiateGame() {
-    gameInProgress = false;
-
-    let boxes = document.querySelectorAll('.box');
-    let index = 0;
-    let interval = setInterval(function() {
-        if (index < boxes.length-1) {
-            if (index == 2) {
-                index++;
-            }
-            glow(boxes[index]);
-            index++;
-        } else {
-            glow(boxes[2]);
-            clearInterval(interval);
-            gameToggle();
-        }
-    }, 50);
-
-}
 
 
 //function to give light glowing effect
