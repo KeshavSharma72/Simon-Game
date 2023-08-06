@@ -1,0 +1,106 @@
+* {
+    padding: 0%;
+    margin: 0%;
+    text-align: center;
+    background-color: grey;
+}
+h1 {
+    color: white;
+}
+.inner-container {
+    display: flex;
+    justify-content: center;
+    align-self: center;
+    height: 35vh;
+    align-items: center;
+}
+.box {
+    width: 20vw;
+    height: 30vh;
+    margin: 0vh 5vw 0vh 5vw;
+    border: 10px solid black;
+    border-radius: 2rem;
+    transition: 0.1s;
+}
+.red {
+    background-color: rgba(200, 0, 0);
+}
+.blue {
+    background-color: blue;
+}
+.yellow {
+    background-color: yellow;
+}
+.aqua {
+    background-color: aqua;
+}
+
+.redFlash {
+    background-color: rgba(255, 0, 0, 0.7); 
+    box-shadow: 0 0 50px 3px rgba(255, 0, 0, 0.7); 
+    border: 10px solid antiquewhite; 
+}
+.blueFlash {
+    background-color: rgba(0, 0, 255, 0.7); 
+    box-shadow: 0 0 50px 3px rgba(0, 0, 255, 0.7);  
+    border: 10px solid antiquewhite; 
+
+}
+.yellowFlash {
+    background-color: rgba(255, 255, 0, 0.7); 
+    box-shadow: 0 0 50px 3px rgba(255, 255, 0, 0.7);  
+    border: 10px solid antiquewhite; 
+
+}
+.aquaFlash {
+    background-color: rgba(0, 255, 255, 0.7); 
+    box-shadow: 0 0 50px 3px rgba(0, 255, 255, 0.7);
+    border: 10px solid antiquewhite; 
+
+}
+.levelUpFlash {
+    background-color: green;
+}
+.gameOverFlash {
+    background-color: red;
+}
+
+/* Media Queries */
+@media(max-width: 400px) {
+    .inner-container {
+        display: flex;
+        justify-content: center;
+        align-self: center;
+        height: 32vh;
+        align-items: center;
+    }
+    .box {
+        width: 37vw;
+        height: 22vh;
+        border: 10px solid black;
+        border-radius: 2rem;
+    }
+    .redFlash {
+        background-color: rgba(255, 0, 0, 0.7); 
+        box-shadow: 0 0 50px 3px rgba(255, 0, 0, 0.7); 
+        border: 10px solid antiquewhite; 
+    }
+    .blueFlash {
+        background-color: rgba(0, 0, 255, 0.7); 
+        box-shadow: 0 0 50px 3px rgba(0, 0, 255, 0.7);  
+        border: 10px solid antiquewhite; 
+    
+    }
+    .yellowFlash {
+        background-color: rgba(255, 255, 0, 0.7); 
+        box-shadow: 0 0 50px 3px rgba(255, 255, 0, 0.7);  
+        border: 10px solid antiquewhite; 
+    
+    }
+    .aquaFlash {
+        background-color: rgba(0, 255, 255, 0.7); 
+        box-shadow: 0 0 50px 3px rgba(0, 255, 255, 0.7);
+        border: 10px solid antiquewhite; 
+    
+    }
+}
