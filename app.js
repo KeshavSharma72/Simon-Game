@@ -68,7 +68,6 @@ function randBtn() {
 function gameContinue() {
     userSeq = [];
     let index = 0;
-    console.log(gameSeq);
     let interval = setInterval(function() {
         if (index < gameSeq.length) {
             glow(document.querySelector(`.${gameSeq[index]}`));
@@ -77,7 +76,6 @@ function gameContinue() {
             clearInterval(interval);
         }
     }, 320);
-    console.log("gameContinue function");   
     
 }
 
@@ -90,7 +88,6 @@ for(box of boxes) {
 function btnPress() {
     userSeq.push(this.classList[1]);
     glow(this);
-    console.log(userSeq);
     checkSeq(userSeq.length-1);
 }
 
