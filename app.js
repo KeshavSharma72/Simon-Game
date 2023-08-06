@@ -59,7 +59,7 @@ function gameToggle() {
 
 //Generates random button 
 function randBtn() {
-    let randNum = Math.floor(Math.random()*3);
+    let randNum = Math.floor(Math.random()*4);
     gameSeq.push(colors[randNum]);
     gameContinue();
 }
